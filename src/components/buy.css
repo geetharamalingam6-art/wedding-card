@@ -1,0 +1,359 @@
+/* Buy / Payment Page Styles */
+.buy-page {
+  min-height: 100vh;
+  background-color: #E8E8FA;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.buy-panels-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.payment-panel,
+.order-summary-panel {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d5d5e5;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Payment Panel Content */
+.payment-logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.brand-logo {
+  font-size: 45px;
+}
+
+.brand-logo.mastercard {
+  color: #eb001b;
+}
+
+.brand-logo.visa {
+  color: #1a1f71;
+}
+
+.brand-logo.paypal {
+  color: #003087;
+}
+
+.upi-brand-badge {
+  background-color: #8b0000;
+  color: #fff;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.upi-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.upi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fafafa;
+}
+
+.upi-icon-small {
+  font-size: 12px;
+  font-weight: 800;
+  color: #d35400;
+  background: #fdebd0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.payment-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.payment-option:last-child {
+  border-bottom: none;
+}
+
+.payment-option:hover {
+  background-color: #f7f9fc;
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.option-left input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #000;
+  cursor: pointer;
+}
+
+.option-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Logos for payment options */
+.option-logo {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.paytm-badge {
+  background: #00b9f1;
+  color: #fff;
+}
+
+.gpay-badge {
+  background: #f1f3f4;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.phonepe-badge {
+  background: #5f259f;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cred-badge {
+  background: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.cod-button {
+  background-color: #7f8c8d;
+  color: #fff;
+  height: 55px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cod-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cod-icon {
+  font-size: 22px;
+}
+
+.arrow-down {
+  font-size: 16px;
+}
+
+.info-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.info-icon {
+  color: #3498db;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2980b9;
+  cursor: pointer;
+}
+
+/* Order Summary Panel Content */
+.order-summary-title {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.summary-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 20px 0;
+}
+
+.products-heading {
+  font-size: 25px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.product-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.coupon-bar {
+  background-color: #dcdde1;
+  border-radius: 8px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.coupon-code {
+  color: #111;
+  font-size: 16px;
+}
+
+.coupon-applied {
+  color: #27ae60;
+  font-size: 16px;
+}
+
+.price-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  color: #d35400; /* Orange/golden color per reference */
+}
+
+.shipping-val {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.free-badge {
+  background-color: #dcdde1;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.pay-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.pay-btn {
+  background-color: #f39c12;
+  color: #111;
+  border: none;
+  width: 220px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.35);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.pay-btn:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .buy-panels-container {
+    flex-direction: column;
+  }
+  .buy-page {
+    padding: 0;
+  }
+  .payment-panel,
+  .order-summary-panel {
+    padding: 25px 20px;
+  }
+}

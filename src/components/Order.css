@@ -1,0 +1,92 @@
+/* ============ ORDER PAGE ============ */
+.order-page {
+  background-color: #e6e6fa;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 60px 70px;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+/* ============ TITLE ============ */
+.order-title {
+  max-width: 1350px;
+  margin: 0 auto 40px;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #111;
+}
+
+/* ============ STEPS ============ */
+.order-steps {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.order-step {
+  font-size: 24px;
+  line-height: 1.5;
+  color: #222;
+  text-align: left;
+  margin: 0 0 20px;
+}
+
+.order-step-label {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ============ TABLET ============ */
+@media (max-width: 992px) {
+  .order-page {
+    padding: 32px 32px 55px;
+  }
+
+  .order-title {
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+  }
+
+  .order-step {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+  .order-page {
+    padding: 24px 20px 45px;
+  }
+
+  .order-title {
+    font-size: 1.35rem;
+    margin-bottom: 26px;
+    line-height: 1.35;
+  }
+
+  .order-step {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+}
+
+/* ============ SMALL MOBILE ============ */
+@media (max-width: 420px) {
+  .order-page {
+    padding: 20px 16px 36px;
+  }
+
+  .order-title {
+    font-size: 1.15rem;
+  }
+
+  .order-step {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,122 @@
+/* Wedding Invitation Page Styles */
+.wedding-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+}
+
+.wedding-header {
+  background-color: #E6E6FA;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.wedding-header h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wedding-header p {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wedding-main {
+  padding: 60px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wedding-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 30px;
+}
+
+.wedding-card-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.wedding-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.wedding-card-img-wrapper {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.wedding-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wedding-card-item:hover .wedding-card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.wedding-card-caption {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Footer list item hover animation */
+.footer-col ul li a {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  transform: translateX(8px);
+  color: #d35400 !important;
+}
+
+@media (max-width: 1200px) {
+  .wedding-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .wedding-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .wedding-grid {
+    grid-template-columns: 1fr;
+  }
+  .wedding-main {
+    padding: 30px 20px;
+  }
+}

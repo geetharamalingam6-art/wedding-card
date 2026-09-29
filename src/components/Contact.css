@@ -1,0 +1,209 @@
+/* ============ CONTACT PAGE ============ */
+.contact-page {
+  background-color: #e6e6fa;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 60px 70px;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+.contact-inner {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* ============ TITLES ============ */
+.contact-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #111;
+  margin: 0 0 45px;
+}
+
+.contact-block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111;
+  margin: 38px 0 16px;
+  text-align: left;
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #111;
+}
+
+.contact-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111;
+  margin: 48px 0 18px;
+  text-align: left;
+}
+
+.contact-subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+  margin: 30px 0 16px;
+  text-align: left;
+  line-height: 1.45;
+}
+
+/* ============ BODY TEXT ============ */
+.contact-lead {
+  font-size: 28px;
+  line-height: 1.8;
+  color: #222;
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+.contact-details {
+  margin: 0 0 6px;
+}
+
+.contact-details p {
+  font-size: 28px;
+  line-height: 1.8;
+  color: #222;
+  text-align: left;
+  margin: 0;
+}
+
+.contact-strong {
+  font-weight: 700;
+  color: #111;
+  margin-top: 14px !important;
+}
+
+.contact-text {
+  font-size: 28px;
+  line-height: 1.8;
+  color: #222;
+  text-align: left;
+  margin: 0 0 18px;
+}
+
+.contact-closing {
+  font-size: 28px;
+  line-height: 1.8;
+  color: #222;
+  text-align: left;
+  margin: 0;
+}
+
+/* ============ LINKS ============ */
+.contact-details a,
+.contact-link {
+  color: #1a1a1a;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.contact-details a:hover,
+.contact-link:hover {
+  color: #6a5acd;
+}
+
+/* ============ TABLET ============ */
+@media (max-width: 992px) {
+  .contact-page {
+    padding: 32px 32px 55px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+    margin-bottom: 36px;
+  }
+
+  .contact-block-title,
+  .contact-section-title {
+    font-size: 1.15rem;
+  }
+
+  .contact-lead,
+  .contact-details p,
+  .contact-text,
+  .contact-closing {
+    font-size: 0.98rem;
+  }
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 24px 20px 45px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+
+  .contact-block-title,
+  .contact-section-title {
+    font-size: 1.05rem;
+    margin: 30px 0 12px;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    margin: 24px 0 12px;
+  }
+
+  .contact-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact-lead,
+  .contact-details p,
+  .contact-text,
+  .contact-closing {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+/* ============ SMALL MOBILE ============ */
+@media (max-width: 420px) {
+  .contact-page {
+    padding: 20px 16px 36px;
+  }
+
+  .contact-title {
+    font-size: 1.3rem;
+  }
+
+  .contact-block-title,
+  .contact-section-title {
+    font-size: 1rem;
+  }
+
+  .contact-lead,
+  .contact-details p,
+  .contact-text,
+  .contact-closing {
+    font-size: 0.9rem;
+  }
+}

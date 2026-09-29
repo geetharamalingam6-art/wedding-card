@@ -1,0 +1,210 @@
+/* ============ ABOUT PAGE ============ */
+.about-page {
+  background-color: #e6e6fa;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 60px 60px;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+/* ============ PAGE TITLE ============ */
+.about-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  color: #111;
+  margin: 0 0 60px;
+}
+
+/* ============ SECTION LAYOUT ============ */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  max-width: 1350px;
+  margin: 0 auto 70px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.about-heading {
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #111;
+  margin: 0 0 20px;
+  line-height: 1.35;
+}
+
+.about-paragraph {
+  font-size: 28px;
+  line-height: 1.75;
+  color: #222;
+  margin: 0 0 12px;
+}
+
+/* ============ LIST ============ */
+.about-list {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 8px 0 0;
+}
+
+.about-list li {
+  font-size: 26px;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.about-list li strong {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ============ IMAGES ============ */
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+/* wide image in section 2 */
+.about-section:nth-of-type(2) .about-image img {
+  max-width: 450px;
+}
+
+/* portrait image in section 3 */
+.about-section:nth-of-type(3) .about-image img {
+  max-width: 450px;
+  aspect-ratio: 3 / 4;
+}
+
+/* ============ CLOSING ============ */
+.about-closing {
+  max-width: 1350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-closing-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 28px;
+}
+
+.about-closing-text {
+  font-size: 32px;
+  line-height: 1.8;
+  color: #222;
+  margin: 0;
+}
+
+/* ============ TABLET ============ */
+@media (max-width: 992px) {
+  .about-page {
+    padding: 32px 32px 50px;
+  }
+
+  .about-section {
+    gap: 36px;
+    margin-bottom: 55px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 45px;
+  }
+
+  .about-heading {
+    font-size: 36px;
+  }
+
+  .about-paragraph,
+  .about-list li,
+  .about-closing-text {
+    font-size: 26px;
+  }
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 24px 20px 40px;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 45px;
+  }
+
+  /* keep a consistent text-then-image order on mobile */
+  .about-section:nth-of-type(2) .about-image {
+    order: 2;
+  }
+
+  .about-section:nth-of-type(2) .about-text {
+    order: 1;
+  }
+
+  .about-image img,
+  .about-section:nth-of-type(2) .about-image img,
+  .about-section:nth-of-type(3) .about-image img {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .about-heading {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .about-closing-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* ============ SMALL MOBILE ============ */
+@media (max-width: 420px) {
+  .about-page {
+    padding: 20px 16px 32px;
+  }
+
+  .about-title {
+    font-size: 1.3rem;
+  }
+
+  .about-paragraph,
+  .about-list li,
+  .about-closing-text {
+    font-size: 0.92rem;
+  }
+}

@@ -1,0 +1,147 @@
+/* Hindu Wedding Cards Page Styles */
+.hindu-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #E6E6FA;
+}
+
+.hindu-header {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #E6E6FA;
+}
+
+.hindu-header h1 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.hindu-main {
+  padding: 40px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hindu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 30px;
+}
+
+.hindu-card-item {
+  background: #FFFDF0; /* Light cream card background matching reference */
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.hindu-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.hindu-card-img-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.hindu-card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hindu-card-item:hover .hindu-card-img-container img {
+  transform: scale(1.04);
+}
+
+.heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  color: #666;
+}
+
+.heart-btn:hover {
+  transform: scale(1.1);
+  background: #fff;
+  color: #e74c3c;
+}
+
+.heart-btn.active {
+  color: #e74c3c;
+  background: #fff;
+}
+
+.hindu-card-info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hindu-card-caption {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hindu-card-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #c0392b;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .hindu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hindu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hindu-grid {
+    grid-template-columns: 1fr;
+  }
+  .hindu-main {
+    padding: 20px;
+  }
+}

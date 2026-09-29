@@ -1,0 +1,113 @@
+/* Special Occasions Dropdown Styles */
+.special-occasions-container {
+  position: relative;
+  display: inline-block;
+}
+
+.occasions-toggle {
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.occasions-toggle::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #333;
+  transition: width 0.3s ease-in-out;
+}
+
+.occasions-toggle:hover::after,
+.occasions-toggle.active::after {
+  width: 100%;
+}
+
+.arrow-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+.occasions-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  background-color: #FCE8B2;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  min-width: 260px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top left;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: itemSlideIn 0.3s ease forwards;
+  animation-delay: calc(var(--item-index) * 0.05s);
+}
+
+@keyframes itemSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dropdown-item.selected {
+  background-color: #f39c12;
+  color: #000;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
