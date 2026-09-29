@@ -345,6 +345,36 @@
   transform: translateY(-2px);
 }
 
+/* Final total row in the price breakdown */
+.price-row.total-row {
+  border-top: 2px solid #e0e0e0;
+  padding-top: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* Cash on delivery / place order button */
+.place-order-btn {
+  margin-top: 14px;
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  color: #7f8c8d;
+  border: 2px solid #7f8c8d;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.place-order-btn:hover {
+  background-color: #7f8c8d;
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .buy-panels-container {
     flex-direction: column;

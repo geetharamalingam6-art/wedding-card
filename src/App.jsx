@@ -18,70 +18,56 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Faq from './components/Faq';
 import Order from './components/Order';
+import { CartProvider } from './context/CartContext';
 import './App.css';
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
 
+  let view;
+
   if (currentView === 'wedding') {
-    return <Wedding onNavigateHome={() => setCurrentView('home')} />;
+    view = <Wedding onNavigateHome={() => setCurrentView('home')} />;
+  } else if (currentView === 'hindu') {
+    view = <Hindu onViewChange={setCurrentView} />;
+  } else if (currentView === 'search') {
+    view = <Search onViewChange={setCurrentView} />;
+  } else if (currentView === 'login') {
+    view = <Login onViewChange={setCurrentView} />;
+  } else if (currentView === 'wishlist') {
+    view = <Wishlist onViewChange={setCurrentView} />;
+  } else if (currentView === 'cart') {
+    view = <Cart onViewChange={setCurrentView} />;
+  } else if (currentView === 'buy') {
+    view = <Buy onViewChange={setCurrentView} />;
+  } else if (currentView === 'pay') {
+    view = <Pay onViewChange={setCurrentView} />;
+  } else if (currentView === 'about') {
+    view = <About onViewChange={setCurrentView} />;
+  } else if (currentView === 'contact') {
+    view = <Contact onViewChange={setCurrentView} />;
+  } else if (currentView === 'faq') {
+    view = <Faq onViewChange={setCurrentView} />;
+  } else if (currentView === 'order') {
+    view = <Order onViewChange={setCurrentView} />;
+  } else {
+    view = (
+      <div className="App">
+        <Navbar onViewChange={setCurrentView} />
+        <Hero onViewChange={setCurrentView} />
+        <FeaturedCarousel />
+        <InvitationCards />
+        <Testimonials />
+        <HowItWorks />
+        <Footer onViewChange={setCurrentView} />
+      </div>
+    );
   }
 
-  if (currentView === 'hindu') {
-    return <Hindu onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'search') {
-    return <Search onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'login') {
-    return <Login onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'wishlist') {
-    return <Wishlist onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'cart') {
-    return <Cart onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'buy') {
-    return <Buy onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'pay') {
-    return <Pay onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'about') {
-    return <About onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'contact') {
-    return <Contact onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'faq') {
-    return <Faq onViewChange={setCurrentView} />;
-  }
-
-  if (currentView === 'order') {
-    return <Order onViewChange={setCurrentView} />;
-  }
-
-  return (
-    <div className="App">
-      <Navbar onViewChange={setCurrentView} />
-      <Hero onViewChange={setCurrentView} />
-      <FeaturedCarousel />
-      <InvitationCards />
-      <Testimonials />
-      <HowItWorks />
-      <Footer onViewChange={setCurrentView} />
-    </div>
-  );
+  // The provider wraps EVERY view so the cart is shared across pages
+  // (home -> cart -> buy). Wrapping only the home view made useCart()
+  // throw on the cart page, which unmounted the whole React tree.
+  return <CartProvider>{view}</CartProvider>;
 }
 
 export default App;

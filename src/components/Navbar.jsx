@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import logoImg from '../assets/logo.jpeg';
 import NavDropdown from './NavDropdown';
+import { useCart } from '../context/CartContext';
 
 const Navbar = ({ onViewChange }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { cartCount } = useCart();
 
   const weddingInvitationItems = [
     'hindu wedding cards',
@@ -47,12 +49,12 @@ const Navbar = ({ onViewChange }) => {
         <div className="nav-logo" style={{ marginTop: '0px', cursor: 'pointer' }} onClick={() => onViewChange && onViewChange('home')}>
           <img src={logoImg} alt="Logo" style={{ height: '160px', width: 'auto', objectFit: 'contain' }} />
         </div>
-        
+
         <div className="nav-right-group">
           <div className="nav-search" onClick={() => onViewChange && onViewChange('search')} style={{ cursor: 'pointer' }}>
-            <input 
-              type="text" 
-              placeholder="Search..." 
+            <input
+              type="text"
+              placeholder="Search..."
               onFocus={() => onViewChange && onViewChange('search')}
               onChange={() => onViewChange && onViewChange('search')}
             />
@@ -79,7 +81,7 @@ const Navbar = ({ onViewChange }) => {
                 <circle cx="20" cy="21" r="1"></circle>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
-              <span className="cart-badge">1</span>
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </div>
           </div>
         </div>

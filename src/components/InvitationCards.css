@@ -119,19 +119,87 @@
   transform: scale(1.15);
 }
 
-/* Full width offer banner image */
-.offer-banner-section {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  line-height: 0;
+/* Clickable image that adds the card to the cart */
+.card-clickable-img {
+  cursor: pointer;
 }
 
-.full-width-offer-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.card-clickable-img:active {
+  transform: scale(0.98);
+}
+
+/* Small "Add to Cart" button shown before a card is in the cart */
+.add-to-cart-sm {
+  margin-top: 14px;
+  padding: 9px 22px;
+  border: none;
+  border-radius: 24px;
+  background-color: #f39c12;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-to-cart-sm:hover {
+  background-color: #e08e0b;
+  transform: translateY(-2px);
+}
+
+/* Quantity stepper with increase / decrease buttons */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  background-color: #fff;
+}
+
+.qty-stepper button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f39c12;
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.qty-stepper button:hover {
+  background-color: #e08e0b;
+}
+
+.qty-stepper span {
+  min-width: 22px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.qty-stepper-sm {
+  margin-top: 0;
+  gap: 8px;
+  padding: 3px 6px;
+}
+
+.qty-stepper-sm button {
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {

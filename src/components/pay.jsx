@@ -7,11 +7,37 @@ import {
   FiTrash2, 
   FiCheck 
 } from 'react-icons/fi';
-import card1 from '../assets/card1.png';
 import Footer from './Footer';
+import { useCart } from '../context/CartContext';
 import './pay.css';
 
+const TAX_RATE = 0.18;
+
+// "Rs. 10.25" -> 10.25
+const parsePrice = (price) => {
+  const match = String(price).match(/\d+(?:\.\d+)?/);
+  return match ? parseFloat(match[0]) : 0;
+};
+
+const formatRs = (amount) => `Rs.${amount.toFixed(2)}`;
+
 const Pay = ({ onViewChange }) => {
+  const { cartItems } = useCart();
+
+  const subTotal = cartItems.reduce(
+    (sum, item) => sum + parsePrice(item.price) * item.quantity,
+    0
+  );
+  const totalTax = subTotal * TAX_RATE;
+  const grandTotal = subTotal + totalTax;
+
+  // Continue Shopping: hard-reload the app so the cart is cleared and the
+  // home page is shown fresh. window.location.href resets in-memory state
+  // (the CartContext) and re-fetches the app from the server.
+  const handleContinueShopping = () => {
+    window.location.href = '/';
+  };
+
   return (
     <div className="pay-page">
       <div className="pay-container">
@@ -39,27 +65,32 @@ const Pay = ({ onViewChange }) => {
               <p className="thank-you-text">Thank You! Your Order has been confirmed.</p>
             </div>
 
-            <div className="product-card-receipt">
-              <div className="receipt-thumb">
-                <img src={card1} alt="The Blue Wedding Card" />
+            {cartItems.map(item => (
+              <div className="product-card-receipt" key={item.id}>
+                <div className="receipt-thumb">
+                  <img src={item.image} alt={item.name || item.alt} />
+                </div>
+                <div className="receipt-sku-badge">
+                  <strong>{item.name || item.alt}</strong>
+                  <span>SKU: {item.id}</span>
+                </div>
+                <div className="receipt-price-action">
+                  <span className="receipt-price">
+                    {formatRs(parsePrice(item.price) * item.quantity)}
+                  </span>
+                  <span className="receipt-qty">Qty: {item.quantity}</span>
+                  <button className="delete-item-btn" aria-label="Delete">
+                    <FiTrash2 />
+                  </button>
+                </div>
               </div>
-              <div className="receipt-sku-badge">
-                <strong>SKU: KSN0054</strong>
-                <span>SN (SN 54)</span>
-              </div>
-              <div className="receipt-price-action">
-                <span className="receipt-price">Rs. 153.00</span>
-                <button className="delete-item-btn" aria-label="Delete">
-                  <FiTrash2 />
-                </button>
-              </div>
-            </div>
+            ))}
 
             <div className="order-summary-box">
               <h3 className="summary-title">Order Summary</h3>
               <div className="summary-row">
                 <span>Subtotal</span>
-                <span>Rs. 153.40</span>
+                <span>{formatRs(subTotal)}</span>
               </div>
               <div className="summary-row">
                 <span>Shipping Charge</span>
@@ -67,7 +98,7 @@ const Pay = ({ onViewChange }) => {
               </div>
               <div className="summary-row">
                 <span>Taxes</span>
-                <span>18%</span>
+                <span>{formatRs(totalTax)}</span>
               </div>
               <div className="summary-row">
                 <span>Discount</span>
@@ -76,14 +107,14 @@ const Pay = ({ onViewChange }) => {
               <hr className="summary-hr" />
               <div className="summary-row total-row">
                 <span>Total</span>
-                <span>Rs. 148.00</span>
+                <span>{formatRs(Math.max(0, grandTotal - 5))}</span>
               </div>
             </div>
 
             <div className="continue-shopping-container">
-              <button 
-                className="continue-shop-btn" 
-                onClick={() => onViewChange && onViewChange('home')}
+              <button
+                className="continue-shop-btn"
+                onClick={handleContinueShopping}
               >
                 Continue Shopping
               </button>
